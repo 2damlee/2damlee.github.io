@@ -96,10 +96,10 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
+  name             : "2damlee"
+  avatar           : "/assets/images/katz.jpg"# path of avatar image, e.g. 
+  bio              : #"I am an **amazing** person."
+  location         : #"Somewhere"
   email            :
   links:
     - label: "Email"
@@ -282,3 +282,10 @@ defaults:
       comments: # true
       share: true
       related: true
+ # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
