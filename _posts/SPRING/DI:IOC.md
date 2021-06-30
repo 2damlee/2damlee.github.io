@@ -1,0 +1,257 @@
+### DI(Dependency Injection)
+
+> Spring의 의존 관계 주입 기능. 객체를 직접 생성하는 것이 아니라 외부에서 생성한 후 주입시키는 방식. Spring은 DI를 강제한다. 
+
+* 장점: 의존성 주입(DI)를 통해 모듈 간의 결합도가 낮아지고 유연성은 높아진다. <img src="21373937580AEF9B37.jpg" alt="img" style="zoom:67%;" />
+
+* 방법 2의 경우가 의존 관계 주입. B, C 객체를 사용할 때 A객체에서 직접 생성하는 것이 아니라 외부 컨테이너 IOC에서 생성된 B, C객체를 생성자나 setter를 통해 주입시킨다. 
+* 이러한 객체를 스프링에서는 <u>Bean</u>이라고 한다. 스프링은 이러한 Bean을 관리하고 수행.
+
+
+
+### IOC(Inversion Of Control)
+
+> 제어 반전 혹은 역전 제어라고 한다. 스프링이 DI에 대한 모든 과정을 맡으며 제어의 흐름이 역전
+
+* 자바 클래스는 내부에서 객체를 생성하는 권한이 없다. 대신 스프링이 그 권한을 갖고 클래스는 스프링이 전달하는 객체를 사용. 제어권을 스프링이 갖는다. 
+* 스프링은 IOC를 갖고 이를 구현하기 위해 DI를 사용한다. 
+* 객체의 의존선을 역전, 객체 간 결합도를 줄이고 유지 보수를 편하게 할 수 있다. 
+  * 자바 객체 생성 과정: 1)객체 생성 2)클래스 내부 객체 생성 3) 객체 메소드 생성
+  * 스프링 : 1)객체 생성 2)(스프링이 만들어놓은 bean)객체 주입 3)객체 매소드 호출
+* Bean들은 싱글톤 패턴의 특징을 갖는다.
+  * 단 한 번만 생성 
+
+
+
+
+
+#### DI 구현하기: bean 객체 생성하기 
+
+> 구현 방법은 xml과 @(annotation) 두 방법이 있으며, 둘이 적절히 혼용하여 사용
+
+* Di를 구현하는 방법은 
+
+  1. setter메소드를 이용
+
+     setter injection
+
+  2. 생성자를 통한 매개자 전달
+
+     constructor injection
+
+  
+
+| xml                                                          | @                                                            |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| xml 파일 모든 설정을 이해하기 쉽다<br />bean 생성 코드가 늘어간다 <br />bean 수정-저장 | 자바소스 내부에 설정<br />위치가 정해져있음<br /><br />수정한 자바 소스만 저장<br />한 번에 모든 설정을 이해하기 어렵다.<br />단순, 간결한 표현 가능<br />xml 파일 내부에 <context:component-scan base-packege="패키지명"> 설정을 해야 함 |
+
+
+
+1. **xml로 생성하기**
+
+   파일 생성: new>other.. > Spring > Spring Bean Configuration File 
+
+   * Beans 객체 생성하기 **< bean id = "변수명" class="패키지명.클래스명"/>**
+
+   xml 파일 내에 아래와 같이 기입
+
+   ````html
+   <beens ... . . .>
+   	<bean id="tv" class="tv.spring.SamsungTV"/> 
+   	<bean id="tv2" class="tv.spring.LGTV"/>
+   </beens>
+   ````
+
+   * bean객체는 싱글톤, 단 한 번만 호출. scope=*"singleton"* 이 default
+   * 만약 singleton객체를 안 하려 하면 prototype(거의 사용 x)
+
+   ````java
+   <bean id="tv" class="tv.spring.SamsungTV" scope="prototype"/>
+   ````
+
+   * 객체에 변수값 넣기 **< property name=" " value=" "/> **
+     * property가 set의 기능. 
+     * name의 경우 Set메소드의 이름 중 Set을 빼고 첫 문자는 소문자로 작성
+
+   ````html
+   <bean id="vo" class="emp.spring.EmpVO">
+   		<property name="id" value="100"/> 
+   		<property name="name" value="이사원"/> 
+    							 <!-- EmpVO vo = new EmpVO();
+   										vo.SetId = 100;
+   										vo.SetName = "이사원"-->
+   </bean>
+   ````
+
+   * main에서 IOC 객체를 사용할 때 설정
+     * xml경로를 기입
+     * .getBean을 통해 생성
+
+   ````java
+   package emp.spring;
+   
+   import org.springframework.context.ApplicationContext;
+   import org.springframework.context.support.ClassPathXmlApplicationContext;
+   
+   public class EmpMain {
+   	public static void main(String[] args) {
+   ApplicationContext factory = new ClassPathXmlApplicationContext("emp/spring/emp.xml");
+   		
+   		VO vo = factory.getBean("vo", VO.class);
+   		VO vo2 = factory.getBean("vo2", VO.class);
+   		
+   		EmpDAO dao = factory.getBean("dao", EmpDAO.class);	
+   		dao.insertEmp(vo2);
+   		System.out.println("회원 등록 마쳤습니다. ");
+   	}
+   ````
+
+   * 생성자의 변수값 set **< constructor-arg value=""/>**
+     * <u>변수 순서를 주의</u>한다. 아래의 경우 (int id, String name, double salary)
+
+   ```html
+   <bean id="vo" class="emp.spring.EmpVO">
+   		<constructor-arg value="300"/>
+   		<constructor-arg value="박대리"/>
+   		<constructor-arg value="1234000"/>
+   	</bean>
+   ```
+
+   
+
+   * 값이 아닌 <u>객체를 주입</u>해야 하는 경우 **ref =**
+
+   ````html
+   	<bean id="dao" class="member.MemberDAO">
+   		<property name="memberVO" ref="vo"></property>
+   	</bean>
+   ````
+
+   
+
+2. **annotation**으로 생성하기
+
+   > xml에 비해 훨씬 간단하다. bean 생성은 해당 클래스 위에 작성해주면 된다. 
+
+   | annotation 이름 | 선언 위치                                                    |
+   | --------------- | ------------------------------------------------------------ |
+   | @Service        | service 클래스 위(bean 태그 대신함)                          |
+   | @Repository     | dao 클래스 위(bean 태그 대신함)                              |
+   | @Component      | 모든 클래스 위(bean 태그 대신함)                             |
+   | **@Autowired**  | 변수 위, 메소드 위<br />: **다른 객체 생성 자동 주입**(생성이 아닌 연결 역할)<br />: 해당 타입만 맞으면 자동으로 연결 <br />: setter injection의 역할<br /> |
+   | @Qualifier      | 변수 위<br /><u>@Autowired와 함께 사용</u><br />2개 이상의 객체 생성시 지정한 객체 선택 |
+
+   * **@Component(" ")**
+
+   : 개발자가 직접 작성한 class를 bean으로 등록하기 위한 Annotation
+
+   ````java
+   package memberanno;
+   
+   import org.springframework.stereotype.Component;
+   
+   @Component("vo") // MemverVO vo= new MemberVO()  
+   public class MemberVO {
+   	String id, pw;
+   	public MemberVO(){}//생성자를 만들면 기본 생성자 삭제, 오류 대비 기본 생성자 생성
+   	public MemberVO(String id, String pw){
+   		this.id = id;
+   		this.pw = pw;
+   	}
+   	
+   	public String getId() {
+   		return id;
+   	}
+   
+   	public void setId(String id) {
+   		this.id = id;
+   	}
+   
+   	public String getPw() {
+   		return pw;
+   	}
+   
+   	public void setPw(String pw) {
+   		this.pw = pw;
+   	}
+   	
+   }
+   ````
+
+   * **@Repository(" ")**
+
+     : dao 클래스에서 쓰인다. (Database에 접근하는 메소드를 갖고 있는 class)
+
+   * **@Autowired**
+
+     : 속성, setter메소드, 생성자에서 사용. type에 따라서 알아서 bean을 주입
+
+   * **@Qualifier(" ")**
+
+     : name으로 강제. Type 확인 후, 찾지 못하는 경우 name에 따라 주입 
+
+   ````java
+   package memberanno;
+   
+   import org.springframework.beans.factory.annotation.Autowired;
+   import org.springframework.beans.factory.annotation.Qualifier;
+   import org.springframework.stereotype.Repository;
+   
+   @Repository("dao")
+   public class MemberDAO {
+   	@Autowired
+   	@Qualifier("vo2")//MemberVO 2개이상 생성
+   	MemberVO vo ;
+   
+   	public boolean selectMember(){
+   		if(vo.getId().equals("spring") && vo.getPw().equals("work")) {
+   			return true;
+   		}
+   		else {
+   			return false;
+   		}
+   	}
+   	public void insertMember(){
+   		System.out.println(vo.getId() + " 회원님 정상 가입되셨습니다.");
+   	}
+   }
+   ````
+
+   * **@Service**
+
+     : Service Class에서 사용, 비즈니스로직을 수행하는 class임을 나타냄 
+
+   ````java
+   package memberanno;
+   
+   import org.springframework.beans.factory.annotation.Autowired;
+   import org.springframework.stereotype.Service;
+   
+   @Service("service")
+   public class MemberServiceImpl implements MemberService {
+   	@Autowired
+   	MemberDAO dao;
+   	//ioc 제공 - di  구현 - setter injection / constructor injection
+   	//스프링 setter injection <property name="" ref=""
+   
+   	public void register() {
+   		boolean result = dao.selectMember();
+   		if(!result) {
+   			dao.insertMember();
+   		}
+       }
+   
+   	public void login() {
+   		boolean result = dao.selectMember();
+   		if(result) {
+   			System.out.println("정상 로그인 사용자");
+   		}
+   	}
+   
+   }
+   ````
+
+   
+
+<a href =https://velog.io/@gillog/Spring-Annotation>annotation 정리 참조</a>
+
