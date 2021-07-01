@@ -42,6 +42,13 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+	   <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Jsp" %}
+                        <li><a href="/categories/jsp" class="">Jsp/Servlet ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Spring" %}

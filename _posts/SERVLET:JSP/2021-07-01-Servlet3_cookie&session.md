@@ -1,6 +1,19 @@
+---
+title: "Servlet(3)"
+categories:
+  - Jsp
+layout: archive
+sidebar_main: true
+author_profile: true
+tag:
+  - servlet
+---
+
+<br><br>
+
 # Cookie & Session
 
-
+<br>
 
 * client와 server 통신
 
@@ -9,13 +22,13 @@
 | http://ip:port/컨텍스트명/a?id=jdbc                          | a -> AServlet -> doGet(){<br />request.getParameter("id")}; |
 | http://ip:port/컨텍스트명/b?id=jdbc<br />서버 종료 시점까지 현재 컨텍스트의 모든 서블릿끼리 공유 O | b -> BServlet -> doGet(){<br />request.getParameter("id")}; |
 
-
+<br>
 
 #### 쿠키와 세션
 
  : 브라우저 종료, 혹은 시기를 정해서 그 기간만 공유를 가능하게 하는 기술
 
-
+<br>
 
 * http프로토콜 처리 과정
 
@@ -33,13 +46,13 @@
   *  웹서버는 이전 클라이언트 처리 결과를 남기지 않는다. (기본적인 http 프로토콜의 특성)
     * 한 번 웹서버 요청한 클라이언트가 또 요청한다면, 이전의  처리 결과를 얻을 수 없다.
 
-
+<br>
 
 이러한 웹서버의 한계점에서 http의 해결은, **쿠키와 세션**
 
 * 쿠키와 세션을 이용하면 이전 클라이언트의 처리 결과를 남길 수 있다. 
 
-
+<br><br>
 
 #### 쿠키와 세션 기능 및 특징
 
@@ -55,7 +68,7 @@
 
 세션: 로그인 아이디, 장바구니 등 정보와 관련된 일들
 
-
+<br>
 
 
 
@@ -66,7 +79,7 @@
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 1. 클라이언트 요청<br /><br />4. 쿠키를 저장한다<br /><br />5. 클라이언트 요청하면 서버 쿠키가 생성되어 있다면, 쿠키 정보를 같이 전송 | 2. 처리한 결과로 저장 정보 만든다<br />Cokkie c =  new Cookie("이름", "값")<br /><br />3. 응답 내부 포함 클라이언트 전송 = 쿠키<br />response.addCookie(c);<br /><br />6. 요청 내부 포함 쿠키 확인 후  처리 추가/쿠키 활용 ...<br />Cookie[] coo = request.getCookies(); |
 
-
+<br>
 
 ##### 쿠키 API
 
@@ -148,7 +161,7 @@ public class CookieServlet2 extends HttpServlet {
 
 
 
-
+<br><br>
 
 * **세션**
 
@@ -156,7 +169,7 @@ public class CookieServlet2 extends HttpServlet {
 | ------------------------------------------------- | ------------------------------------------------------------ |
 | 1. 클라이언트 요청<br /><br />5. 클라이언트 요청2 | 2. 처리한 결과로 저장 정보 만든다<br />2-1. 세션 객체 생성<br />HttpSession session = request.getSession();<br />2-2. 필요한 정보를 저장<br />session.getAttribute("속성명1", 객체1)<br />요청1의 session:id(클라이언트마다 식별자가 있음)<br />[속성명1: 객체1][속성명2: 값2 ..<br /><br />4. 응답<br /><br />6. 서버 내부 세션 가운데 요청2 클라이언트의 저장 정보(세션확인)를 확인 <br /><br />7. 세션 정보를 활용<br />session.getAttribute("속성명1")<br />session.getAttribute("속성명2") |
 
-
+<br>
 
 ````java
 package session;
