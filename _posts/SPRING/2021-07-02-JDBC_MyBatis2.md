@@ -1,12 +1,25 @@
+---
+title: "MyBatis-2"
+categories:
+  - Spring
+layout: archive
+sidebar_main: true
+author_profile: true
+tag:
+  - Spring
+---
+
+<br><br>
+
 ### MyBatis와 MVC 연결
 
-
+<br>
 
 * pom.xml에 라이브러리를 작성하고 다운로드했으면,ojdbc.jar와 Spring-mybatis를 연동하기 위한 .jar파일(mybatis-spring.jar, spring-jdbc.jar)들이 다운로드 되어있어야 한다.
 * 이전까지 Mybatis를 자바에서만 활용했다면, 이제 Spring과 연결하여 DI, IOC, MVC를 함께 사용한다. 
 * Session연결은 이제 Spring에서 만들어 넘겨받아야하며, 권한은 스프링이 갖는다.
 
-
+<br>
 
 #### xml에 환경설정하기 
 
@@ -88,7 +101,7 @@
 
     * 패키지명 그대로 작성해주면 된다. (test.my.mvc)
 
-
+<br>
 
 * board-config.xml파일은 이제 연결정보는 필요 x , 기본 정보와 Alias설정 가능
 
@@ -105,7 +118,7 @@
   </configuration>
   ````
 
-
+<br>
 
 연결 완료, 이제 mvc에 Mybatis를 사용하면서 mvc의 API, annotation 사용 가능!
 
@@ -115,7 +128,7 @@ Session은 이제 객체를 생성할 필요가 없고, Spring IOC의 bean객체
 | -------------------------------- | ------------------------------------------------------------ |
 | @Controller<br />@RequestMapping | @Service<br />@Repository<br />@Component<br />@Autowired<br />@Qualifier |
 
-
+<br>
 
 * MyBatis와 MVC 구조 
 

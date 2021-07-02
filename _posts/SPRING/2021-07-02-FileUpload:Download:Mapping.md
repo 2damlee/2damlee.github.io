@@ -1,8 +1,21 @@
+---
+title: "File Upload / Download"
+categories:
+  - Spring
+layout: archive
+sidebar_main: true
+author_profile: true
+tag:
+  - Spring
+---
+
+<br><br>
+
 # 파일 업로드
 
 > 지금까지 서버-클라이언트 전송 datatype이 문자 데이터들이었다면, 파일을 사용한다. 
 
-
+<br>
 
 파일전송을 위해 클라이언트와 서버에서 해야 하는 사항들은 다음과 같다.
 
@@ -26,7 +39,7 @@
 
   * 본래 데이터가 넘어가는 형태는 ?구분자를 기준으로 각 값을 &로 구분(ex. ?id=dd&pw=xx)한다면, 파일의 경우 각 값이 완전히 분리된 형태로 넘어간다. 
 
-
+<br>
 
 * 서버
 
@@ -69,13 +82,13 @@
     String savePath="/Users/lulala/upload";
     ````
 
-
+<br>
 
 #### Spring Boot의 경우
 
 부트의 경우 해당 라이브러리가 이미 내장되어 있기 때문에 위와 같은 환경설정 필요 없이 바로 코드작성이 가능하다. 
 
-
+<br>
 
 * 예제
 
@@ -190,11 +203,11 @@
   
   * 클라이언트로부터 파일을 받게 될 경우, 파일을 받는 해당 폴더에서 동일 이름으로 파일이 충돌하지 않기 위해 랜덤이름을 지정 
 
-
+<br><br>
 
 # 파일 다운로드
 
-
+<br>
 
 ````java
 package com.mulit.myboot01;
@@ -248,7 +261,7 @@ public class DownloadController {
 
 
 
-
+<br><br>
 
 # 파일 이미지 매핑
 
@@ -256,7 +269,7 @@ public class DownloadController {
 >
 > jsp내부에서 외부이미지(예를 들면 업로드했던 이미지)를 사용하려면, 서버 내부의 경로를 직접주지 않고 그 파일에 대한 mapping을 해줘야 한다.
 
-
+<br>
 
 * 업로드받은 파일을 업로드 할 경우
 
@@ -265,7 +278,7 @@ public class DownloadController {
 
   c:/upload 폴더 > **/upload uri 요청 추가 매핑**이 반드시 필요
 
-
+<br>
 
 ````java
 package com.mulit.myboot01;

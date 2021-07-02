@@ -1,10 +1,21 @@
+---
+title: "Download and Setting"
+categories:
+  - Spring
+layout: archive
+sidebar_main: true
+author_profile: true
+tag:
+  - Spring
+---
+
+<br><br>
+
 # Spring
 
 > 자바 개발을 위해 어느정도의 틀을 제공하는 일종의 프레임워크 중 하나. 
 
 * MVC: Model, view, Controller Structure ( Model2 )
-
-<img src="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-04-13%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2010.01.47.png" alt="스크린샷 2021-04-13 오후 10.01.47" style="zoom:50%;" />
 
 * 각 역할
   * 서블릿: Controller 역할 (요청 파라미터를 추출, 분석, 처리 할 DAO를 결정 -> 결과를 보여줄 JSP를 결정. 일종의 교통정리)
@@ -15,7 +26,7 @@
 
 
 
-
+<br><br>
 
 ### Spring 시작하기
 
@@ -32,25 +43,17 @@
    1) Change <java-version> to 1.8
    	Change <org.aspectj-version> to 1.6.10 
 
-   ![스크린샷 2021-04-16 오후 7.28.24](%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-04-16%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%207.28.24.png)
-
-   
-
-   
-
    2) Change Compiler
 
    * Preferences>Java Compiler> change java version(1.8)
    * Edit Library>JRE System Library> change java version(1.8)
    * Project Facets>  change java version(1.8)
    * Project Facets> Runtimes Apache Tomcat (add libarary)
-
    
-
    3) Connect Tomcat (after connect, check libarary)
-
-    
-
+   
+    <br>
+   
 5. 파일 위치 파악하기 
 
    <img src="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-04-13%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2010.03.38.png" alt="스크린샷 2021-04-13 오후 10.03.38" style="zoom: 50%;" />
@@ -67,28 +70,24 @@
 
 
 
+### 설치
+
 ##### Dynamic Web Installation
 
-<img src="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-04-16%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%207.23.34.png" alt="스크린샷 2021-04-16 오후 7.23.34" style="zoom:50%;" />
-
-
-
-
-
-
+<br>
 
 #### Create Spring mvc project
 
 * new > Spring Legacy Project > Spring MVC Project > package name > finish
   * 초기 패키지 생성은 필수, test.my.mvc로 이름을 정할 시, 서버가 시작되면 url의 끝은 /mvc로 시작하게 된다. 따라서 여러 패키지를 만들게 될 시 세번째 이름은 중복되지 않도록 한다.(충돌 오류발생함)
 
-
+<br>
 
 ### Spring Dependency Injection
 
 : 클래스 객체를 개발자가 코드에서 생성하지 않고 프레임워크가 생성하여 사용하는 방법 
 
-
+<br>
 
 ##### 의존성 주입(Dependency Injection)
 
@@ -107,6 +106,8 @@
 * 주입: 값을 다른 객체로부터 전달받아오는 것을 주입 받는다고 표현한다. 
 
   * 해당 클래스가 결정한 객체가 아닌 외부로부터 전달받은 객체를 의미. 
+  
+    <br><br>
 
 DAO VO의 예시)
 

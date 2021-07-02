@@ -1,18 +1,31 @@
+---
+title: "MyBatis-1"
+categories:
+  - Spring
+layout: archive
+sidebar_main: true
+author_profile: true
+tag:
+  - Spring
+---
+
+<br><br>
+
 JDBC
 
-> 통합 프레임워크 중 jdbc가 있는 Spring Jdbc, 그리고 DB연동만을 목적으로 하는 프레임워크 MyBatis가 있다. MyBatis는 스프링의 독립적인 사용과 연결이 가능하다
+: 통합 프레임워크 중 jdbc가 있는 Spring Jdbc, 그리고 DB연동만을 목적으로 하는 프레임워크 MyBatis가 있다. MyBatis는 스프링의 독립적인 사용과 연결이 가능하다
 
 
 
-
+<br><br>
 
 ## MYBATIS
 
-> 기존의 jdbc의 코드 반복의 단점이 보완된 프레임워크. sql소스는 xml파일에 작성하기 때문에 sql의 변환이 자유롭다. 
->
-> * 주의: IBATIS와 MYBATIS는 호환이 안 되는 API가 종종 있다. 오류의 경우 확인할 것
+기존의 jdbc의 코드 반복의 단점이 보완된 프레임워크. sql소스는 xml파일에 작성하기 때문에 sql의 변환이 자유롭다. 
 
+주의: IBATIS와 MYBATIS는 호환이 안 되는 API가 종종 있다. 오류의 경우 확인할 것
 
+<br>
 
 * 특징
   * con-mybatis 설정 파일 한 번만 가져오게 하고, connectionpooling을 한다.(중복코드x)
@@ -20,7 +33,7 @@ JDBC
   * SQL과 JAVA 언어 작성 영역을 분리한다
     * 자바+SQL만 정의해놓은 XML파일 + MyBatis 라이브러리
 
-
+<br>
 
 #### 시작하기
 
@@ -76,11 +89,11 @@ JDBC
   
   ````
 
-  
+  <br><br>
 
 #### 연결, 사용하기
 
-
+<br>
 
 * 설정
 
@@ -130,7 +143,7 @@ JDBC
     	</typeAliases> 
     ````
 
-    
+    <br>
 
 * 연결하기: 
 
@@ -153,7 +166,7 @@ JDBC
 
   * 설정으로 sql commit을 자동으로 생성 가능 
 
-
+<br>
 
 * MyBatis와 Spring 연결
 
@@ -275,7 +288,7 @@ JDBC
 
      * **< selectkey>** : 해당 SQL문이 실행 될 때만 임시적으로 select를 생성한다. 
 
-
+<br><br>
 
 ##### 예제) MVC와 DB활용
 

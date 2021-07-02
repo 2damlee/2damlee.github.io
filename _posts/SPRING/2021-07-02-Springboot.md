@@ -1,6 +1,19 @@
+---
+title: "Spring boot"
+categories:
+  - Spring
+layout: archive
+sidebar_main: true
+author_profile: true
+tag:
+  - Spring
+---
+
+<br><br>
+
 # Spring Boot
 
-> 스프링부트는 기존 스프링이 가지고 있는 환경설정의 복잡함을 덜어주기 위해 생긴 것, 현재도 완성형은 아니고 계속해서 디벨롭되고 있는 상태이다. 
+스프링부트는 기존 스프링이 가지고 있는 환경설정의 복잡함을 덜어주기 위해 생긴 것이라고 이해하면 된다.
 
 * maven - 스프링 라이브러리 자동 다운로드 기능이 포함된 프로젝트를 만들 수 있는 툴: sts
   * Spring은 xml설정이 늘 필수적. 
@@ -8,7 +21,7 @@
   * xml설정의 복잡도가 좀 덜해진다.
   * web.xml + spring bean 설정파일.xml이 없어지고, 대신 applicaiton.properties에서 모든 파일 설정
 
-
+<br>
 
 #### 시작하기
 
@@ -20,7 +33,7 @@ Maven : 사용 라이브러리
 
 War: 저장할 파일 형태 (war의 경우 웹프로젝트)
 
-
+<br>
 
 2. 필요한 라이브러리 추가 
    * AJAX, MultipartFile API 등 여러 라이브러리들은 이미 부트에 포함되어 있다.
@@ -31,7 +44,7 @@ War: 저장할 파일 형태 (war의 경우 웹프로젝트)
 
 나는 해당 설정시 Spring Web, Jdbc Api, MyBatis Framework, Oracle Driver, Spring Web을 선택  
 
-
+<br>
 
 #### 환경설정하기
 
@@ -60,7 +73,7 @@ War: 저장할 파일 형태 (war의 경우 웹프로젝트)
       </dependency>
   ````
 
-
+<br>
 
 * application.propertis 환경설정/ 파일 위치 
 
@@ -98,7 +111,7 @@ War: 저장할 파일 형태 (war의 경우 웹프로젝트)
     * 위 설정은 db-config는 classpath: 바로 아래 위치, sql-mapping.xml은 classpath: 내에 mybatis 폴더 안으로 경로를 설정
     * src/main/resources/templates/ 타입리프 포함 html파일(설정추가) (사용할 일x)
 
-
+<br>
 
 #### Spring Boot 특징 
 
@@ -124,7 +137,7 @@ War: 저장할 파일 형태 (war의 경우 웹프로젝트)
 
   * 따라서 Boot의 경우 session을 구현할 일이 없다
 
-
+<br>
 
 #### MyBatis DB연결
 
@@ -154,7 +167,7 @@ config.xml
 
 ```
 
-
+<br>
 
 ##### annotation 패키지 등록 : @ComponentScan
 
@@ -196,7 +209,7 @@ public class Myboot011Application {
 
 main에서 해당 경로를 읽고, 경로에 위치하는 파일 내에 등록된 경로를 또 읽어서 연결된다. (main-config-sqlmapping)
 
-
+<br><br>
 
 ##### DAO와 SQL Mapping
 
@@ -207,7 +220,7 @@ main에서 해당 경로를 읽고, 경로에 위치하는 파일 내에 등록�
   * MyBatis에서 DAO인터페이스의 메소드명과 동일한 id를 가진 것이 호출된다. (parameterType 호출되려면 역시 인터페이스 변수로 동일한 데이터타입이 선언되어있어야 한다.)
   * **sqlmapping 태그id와 DAO 메소드 이름 동일, parameterType과 변수타입 동일 필수**
 
-  
+  <br>
 
 * **각 태그의 Alias를 VO클래스의 bean객체 이름과 동일하게 변경**
 
@@ -221,7 +234,7 @@ main에서 해당 경로를 읽고, 경로에 위치하는 파일 내에 등록�
 	</typeAliases> 
 ````
 
-
+<br>
 
 * **sql-mapping.xml의 mapper이름은 DAO클래스이름으로 변경**
   * 서로가 서로의 mapper임을 동일하게 선언
@@ -243,7 +256,7 @@ main에서 해당 경로를 읽고, 경로에 위치하는 파일 내에 등록�
 
     @MapperScan(basePackageClasses = EmpDAO.class)
 
-
+<br>
 
 | EmpDAO                                                       | sql-mapping.xml                                              |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
