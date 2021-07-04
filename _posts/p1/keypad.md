@@ -1,0 +1,90 @@
+- 문제 설명
+
+    스마트폰 전화 키패드의 각 칸에 다음과 같이 숫자들이 적혀 있습니다.
+
+    ![https://grepp-programmers.s3.ap-northeast-2.amazonaws.com/files/production/4b69a271-5f4a-4bf4-9ebf-6ebed5a02d8d/kakao_phone1.png](https://grepp-programmers.s3.ap-northeast-2.amazonaws.com/files/production/4b69a271-5f4a-4bf4-9ebf-6ebed5a02d8d/kakao_phone1.png)
+
+    이 전화 키패드에서 왼손과 오른손의 엄지손가락만을 이용해서 숫자만을 입력하려고 합니다.맨 처음 왼손 엄지손가락은 `*` 키패드에 오른손 엄지손가락은 `#` 키패드 위치에서 시작하며, 엄지손가락을 사용하는 규칙은 다음과 같습니다.
+
+    1. 엄지손가락은 상하좌우 4가지 방향으로만 이동할 수 있으며 키패드 이동 한 칸은 거리로 1에 해당합니다.
+    2. 왼쪽 열의 3개의 숫자 `1`, `4`, `7`을 입력할 때는 왼손 엄지손가락을 사용합니다.
+    3. 오른쪽 열의 3개의 숫자 `3`, `6`, `9`를 입력할 때는 오른손 엄지손가락을 사용합니다.
+    4. 가운데 열의 4개의 숫자 `2`, `5`, `8`, `0`을 입력할 때는 두 엄지손가락의 현재 키패드의 위치에서 더 가까운 엄지손가락을 사용합니다.4-1. 만약 두 엄지손가락의 거리가 같다면, 오른손잡이는 오른손 엄지손가락, 왼손잡이는 왼손 엄지손가락을 사용합니다.
+
+    순서대로 누를 번호가 담긴 배열 numbers, 왼손잡이인지 오른손잡이인 지를 나타내는 문자열 hand가 매개변수로 주어질 때, 각 번호를 누른 엄지손가락이 왼손인 지 오른손인 지를 나타내는 연속된 문자열 형태로 return 하도록 solution 함수를 완성해주세요.
+
+    ### **[제한사항]**
+
+    - numbers 배열의 크기는 1 이상 1,000 이하입니다.
+    - numbers 배열 원소의 값은 0 이상 9 이하인 정수입니다.
+    - hand는 `"left"` 또는 `"right"` 입니다.
+        - `"left"`는 왼손잡이, `"right"`는 오른손잡이를 의미합니다.
+    - 왼손 엄지손가락을 사용한 경우는 `L`, 오른손 엄지손가락을 사용한 경우는 `R`을 순서대로 이어붙여 문자열 형태로 return 해주세요.
+
+    ---
+
+
+문제 풀이
+
+- 1, 4, 7은 "L" 3, 6, 9는 "R"을 문자열에 추가
+- 2, 5, 8, 0은 L과 R 각각의 위치에서 가까운 위치가 누른다. 만약 같은 경우, 주어진 hand의 값에 따라 L, R이 정해진다.
+- L 과 R의 거리를 계산하고, 그 거리를 기준으로 숫자가 작은 쪽에 방향을 문자열에 추가한다.
+    - 거리 계산은 현재 번호 - 이동할 번호의 /3과 %3의 값을 더한다.
+
+        가로방향은 -1, 세로방향은 -3이 각각 1의 거리이기 때문.  
+
+```java
+import java.lang.Math;
+
+class Solution {
+    public String solution(int[] numbers, String hand) {
+        String answer = "";
+        // *, #의 위치값을 10과 12로 설정 
+        int right = 12;
+        int left = 10;
+        
+        for(int i = 0; i < numbers.length; i++) {
+            // 0의 위치값을 11로 설정
+            if(numbers[i] == 0) numbers[i] = 11;
+            // 1. 1, 4, 7은 left 3, 6, 9는 right
+            if(numbers[i] == 1 || numbers[i] == 4 || numbers[i] == 7) {
+                answer += "L";
+                left = numbers[i];
+            }
+            else if(numbers[i] == 3 || numbers[i] == 6 || numbers[i] == 9) {
+                answer += "R";
+                right = numbers[i];
+            }
+						// 2. 2, 5, 8, 0의 경우 
+            else {
+								// 2-1. 거리값 구하기 (위치값-번호값/3 + %3)
+                int l_count = Math.abs(left-numbers[i]);
+                int r_count = Math.abs(right-numbers[i]);
+                l_count = l_count/3 + l_count%3;
+                r_count = r_count/3 + r_count%3;
+                // 2-2. 거리차가 작은 방향에 answer+ 
+                if(l_count < r_count) {
+                    answer += "L";
+                    left = numbers[i];
+                }
+                else if(l_count > r_count) {
+                    answer += "R";
+                    right = numbers[i];
+                }
+								// 2-3. 거리가 같은 경우
+                else {
+                    if(hand.equals("left")) {
+                        answer += "L";
+                        left = numbers[i];
+                    }
+                    else {
+                        answer += "R";
+                        right = numbers[i];
+                    }
+                }
+            }
+        }        
+        return answer;
+    }
+}
+```
