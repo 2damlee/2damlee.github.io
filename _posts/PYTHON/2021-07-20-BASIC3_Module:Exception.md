@@ -1,3 +1,18 @@
+---
+title: "Python basic(3) - Module/Exception"
+categories:
+  - Python
+layout: archive
+sidebar_main: true
+author_profile: true
+tags:
+  - python
+---
+
+<br>
+
+<br>
+
 # Modul
 
 > a, b 부품이 결합하면 완성품 x가 만들어지고, a, c가 결합하면 완성품 y가 만들어진다. 
@@ -6,17 +21,13 @@
 >
 > 물리적 형태는 .py 즉 파이썬 파일 하나로 이루어져 있다. 
 
-
-
-python은 엄청난 라이브러리들이 있고, 이 라이브러리들은 한 회사나 단체가 관리하는 것이 x 
-
 * pypi.org : 라이브러리 다운로드 가능 /파이썬 라이브러리 관리, 다운로드 가능 사이트.
 
   미리 만들어진 .py 파일이 있다. 이 파일을 import해서 사용하는 것 
 
 
 
-##### import 방법
+##### <br>import 방법
 
 > from이 붙으면 사용시 modul이름을 쓰지 않음
 
@@ -69,7 +80,7 @@ random/math/time/sys/
 
   
 
-
+<br><br>
 
 ##### 기본 모듈
 
@@ -90,7 +101,7 @@ random/math/time/sys/
 
   > 일반적으로 random은 전체데이터가 많으면 몇 개만 가져와 표본을 골라내고 분석해보고 나머지 데이터들에게 적용해봐야 할 때, 즉 집단에서 표본 샘플을 뽑아내는 작업에서 사용된다. 
 
-
+<br>
 
 * sys / os
 
@@ -118,7 +129,7 @@ random/math/time/sys/
 
   
 
-
+<br>
 
 * datetime
 
@@ -144,7 +155,7 @@ random/math/time/sys/
   print("one year after=", after_1year.year)
   ````
 
-  
+  <br>
 
 * time
 
@@ -157,7 +168,7 @@ random/math/time/sys/
 
   시간을 만들어서 초단위로 줬을 때, 현재 지역의 시간으로 변경 
 
-
+<br><br>
 
 
 
@@ -193,7 +204,7 @@ random/math/time/sys/
 
 
 
-
+<br>
 
 ##### 서버에 요청, 응답하기
 
@@ -228,7 +239,7 @@ response.close()
 
 
 
-
+<br><br>
 
 
 
@@ -244,7 +255,7 @@ response.close()
 
 파이썬에서는 errror가 곧 exception 
 
-
+<br>
 
 * 예외처리방법
 

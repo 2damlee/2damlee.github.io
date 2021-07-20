@@ -1,3 +1,18 @@
+---
+title: "Python basic(4) - Data processing"
+categories:
+  - Python
+layout: archive
+sidebar_main: true
+author_profile: true
+tags:
+  - python
+---
+
+<br>
+
+<br>
+
 # 데이터 전처리/시각화
 
 > * 웹크롤링은 웹의 정보를 가져오는 것
@@ -6,7 +21,7 @@
 1. 라이브러리 다운로드 
    * ​    #pip3 install matplotlib
 
-
+<br>
 
 * 데이터 그리기 
 
@@ -63,7 +78,7 @@
     * plt.subplot(2, 2, 1)일 경우 2*2영역에 1번. 총 4개의 그래프가 화면에 나올 수 있다. 
   * 그래프 표현의 경우 다양한 표현이 가능하다. 그때그때 필요한 모양은 검색해서 추가할 것
 
-
+<br>
 
 ### Spring과 연결하기
 
@@ -104,7 +119,7 @@
 
 
 
-
+<br><br>
 
 
 ### 외부 데이터 가져와서 처리하기 
@@ -203,7 +218,7 @@
   plt.show()
   ````
 
-  
+  <br>
 
 **파일 가져와서 데이터 가공 후 처리하기**
 
@@ -244,7 +259,7 @@ plt.show()
 
 
 
-
+<br><br>
 
 ### Jupiter Notebook 사용
 
@@ -309,7 +324,7 @@ plt.show()
 
   * ! 뒤에 따라오는 구문들은 도스창에서 실행되는 것
 
-
+<br><br>
 
 
 # Pandas Package

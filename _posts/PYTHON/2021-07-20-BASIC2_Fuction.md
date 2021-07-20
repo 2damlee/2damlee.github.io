@@ -1,27 +1,91 @@
-# Fuction
+---
+title: "Python basic(2) - Function"
+categories:
+  - Java
+layout: archive
+sidebar_main: true
+author_profile: true
+tags:
+  - python
+---
 
-기본값매개변수/키워드매개변수/가변매개변수/일반매개변수 
 
 
+<br>
 
-가변매개변수 
+<br>
 
-가변매개변수의 경우, 모든 타입의 함수 매개변수 정의가 가능함. 따라서 일반매개변수와 함께 불가, 키워드 매개변수와 함께 쓰여야 함. 그것은 가능. 그리고 입력되지 않을 경우, 미리 기본값 매개변수 주는 것이 가능
+사용자 정의 함수 
 
-````python
-def dynamic_message(*msg, n=10):
-     for i in range(1, n+1, 1):
-           print(msg)
+* 특정 데이터에 포함되어있는 객체를 메소드라고 쓰고, 포함되어있지 않은 객체를 함수라고 한다.
+
+* 함수: 입력값(매개변수)을 받아 특정 기능을 구현, 결과 return
+
+* 함수이름은 내장함수 이름과 동일하게 두지 않는다.(동일하게 선언시 내장함수 사용 불가)
+
+  <br>
+
+  
+
+  * 매개변수 없는 함수 정의
+
+    ````python
+    def hello_3times():
+          print("hello")
+          print("hello")
+          print("hello")
+    #함수 호출/실행
+    hello_3times()      #print(hello_3times()) > None -return값이 없음 
+    ````
+
+  <br>
+
+  * 매개변수 있는 함수 정의
+
+    ````python
+    #매개변수 있는 함수 정의
+    def message_ntimes(message, n):
+          for i in range(1, n+1, 1):
+                print(message)
+    
+    #함수 호출
+    message_ntimes('python', 5)
+    ````
+
+  <br>
+
+  * 기본 매개변수가 있는 함수 정의 
+
+    ````python
+    #매개변수 입력 안할 시 기본 매개변수로 실행
+    def basic_ntimes(message='java', n=5):
+          for i in range(1, n+1, 1):
+                print(message)
             
-dynamic_message('spring', 'java', 3, n=5)#key매개변수만 지정 가능
-dynamic_message('spring', 1, 'java', True)
-````
+            
+    #함수 호출
+    #basic_ntimes()
+    basic_ntimes(message='pypypython')     #keyword 매개변수/순서 상관 X
+    ````
 
-> 가변매개변수는 Tuple로 취급함
+  <br>
 
+  * 가변 매개변수 함수 정의
 
+    * 가변 매개변수는 하나만 선언O 일반매개변수 뒤에만 선언
+    * 일반매개변수가 앞에 선언되어 둘이 같이 선언될 수 X(일반매개변수에 값이 전달되지 않음)
 
+    ````python
+    def dynamic_message(n, *msg):
+          for i in msg:
+                print(i)
+                
+    dynamic_message(4, 'python')
+    dynamic_message('python', 'java')
+    dynamic_message('python', 'css', 'spring')
+    ````
 
+    <br>
 
 ##### return 있는 경우
 
@@ -56,7 +120,9 @@ dynamic_message('spring', 1, 'java', True)
     * 변경/추가/삭제 불가
   * list/set/dict으로 바꾸고 싶은 경우, return 타입을 list [ ] 나 set { } dict{ : }으로 만들어주면 된다. 선언 없을시(기본나열) 기본값이 tuple. 
 
+<br>
 
+<br>
 
 
 
@@ -104,7 +170,7 @@ def vartest(b):#매개변수
 
   * 지역변수를 전역에서도 사용하고싶을 경우는 변수값을 return
 
-
+<br>
 
 ##### 함수의 재귀호출
 
@@ -147,7 +213,7 @@ def vartest(b):#매개변수
   * 구현은 단순하지만, 함수를 복사해서 여러개가 쌓이는 개념이기 때문에 메모리에 있어서는 비효율적
   * 좋은 성능을 요구하는 코드에서는 재귀함수를 반복문으로 대체하는 것이 낫다. 
 
-
+<br>
 
 ##### 함수의 변수취급
 
@@ -196,7 +262,7 @@ def vartest(b):#매개변수
   print(b)
   ````
 
-
+<br>
 
 ##### 구현부가 없는 함수
 
@@ -211,7 +277,7 @@ def vartest(b):#매개변수
 
   * 구현부를 미뤄두는 방법 
 
-
+<br>
 
 ##### 람다식
 
