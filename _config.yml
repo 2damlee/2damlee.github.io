@@ -52,8 +52,8 @@ reCaptcha:
 atom_feed:
   path                   : # blank (default) uses feed.xml
   hide                   : # true, false (default)
-search                   : # true, false (default)
-search_full_content      : # true, false (default)
+search                   : true
+search_full_content      : true
 search_provider          : # lunr (default), algolia, google
 algolia:
   application_id         : # YOUR_APPLICATION_ID
@@ -288,3 +288,8 @@ defaults:
     values:
       layout: single
       author_profile: true
+
+# toggle
+dark_theme_toggle        : true # 다크 모드 토글 기능 추가
+footer_scripts:
+  - /assets/js/custom/dark-theme.js
