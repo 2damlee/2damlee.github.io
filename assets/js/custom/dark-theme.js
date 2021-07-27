@@ -1,5 +1,3 @@
-/* assets/js/custom/dark-theme.js */
-
 var defaultTheme = [...document.styleSheets].find(style => /(main.css)$/.test(style.href))
 var darkTheme = [...document.styleSheets].find(style => /(main_dark.css)$/.test(style.href))
 
