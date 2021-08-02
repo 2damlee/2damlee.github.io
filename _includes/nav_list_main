@@ -70,29 +70,48 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+	     
+	<span class="nav_sub-title">Cloud</span>
+		<ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Aws" %}
+                        <li><a href="/categories/aws" class="">AWS ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            	</ul>
 
-         <span class="nav__sub-title">Coding Test</span>        
+	<span class="nav__sub-title">Project</span>        
              <ul>
                 {% for category in site.categories %}
+                    {% if category[0] == "Springboard" %}
+                        <li><a href="/categories/springboard" class="">스프링 게시판 만들기 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            	</ul>
+
+	<span class="nav__sub-title">Coding Test</span>        
+            <ul>
+               {% for category in site.categories %}
                     {% if category[0] == "p1" %}
                         <li><a href="/categories/p1" class="">Programmers Level1 ({{category[1].size}})</a></li>
                     {% endif %}
-                {% endfor %}
+               {% endfor %}
             </ul>
             <ul>
-                {% for category in site.categories %}
+               {% for category in site.categories %}
                     {% if category[0] == "p2" %}
                         <li><a href="/categories/p2" class="">Programmers Level2 ({{category[1].size}})</a></li>
                     {% endif %}
-                {% endfor %}
+               {% endfor %}
             </ul>
             <ul>
-                {% for category in site.categories %}
+               {% for category in site.categories %}
                     {% if category[0] == "baek" %}
                         <li><a href="/categories/baek" class="">Baekjoon ({{category[1].size}})</a></li>
                     {% endif %}
-                {% endfor %}
+               {% endfor %}
             </ul>
+
 
       </li>
   </ul>
