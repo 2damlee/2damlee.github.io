@@ -70,24 +70,24 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-	     
-	<span class="nav_sub-title">Cloud</span>
-		<ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Aws" %}
-                        <li><a href="/categories/aws" class="">AWS ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            	</ul>
 
 	<span class="nav__sub-title">Project</span>        
              <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Springboard" %}
-                        <li><a href="/categories/springboard" class="">스프링 게시판 만들기 ({{category[1].size}})</a></li>
+                    {% if category[0] == "Springboot" %}
+                        <li><a href="/categories/springboot" class=""> SPRINGBOOT ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             	</ul>
+
+	<span class="nav__sub-title">Cloud</span>        
+             <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Aws" %}
+                        <li><a href="/categories/aws" class=""> AWS ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
 
 	<span class="nav__sub-title">Coding Test</span>        
             <ul>
