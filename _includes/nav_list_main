@@ -89,7 +89,7 @@
                 {% endfor %}
             </ul>
 
-	<span class="nav__sub-title">Coding Test</span>        
+	<span class="nav__sub-title">Problem Solving</span>        
             <ul>
                {% for category in site.categories %}
                     {% if category[0] == "p1" %}
@@ -108,6 +108,13 @@
                {% for category in site.categories %}
                     {% if category[0] == "baek" %}
                         <li><a href="/categories/baek" class="">Baekjoon ({{category[1].size}})</a></li>
+                    {% endif %}
+               {% endfor %}
+            </ul>
+	    <ul>
+               {% for category in site.categories %}
+                    {% if category[0] == "sql_test" %}
+                        <li><a href="/categories/sql_test" class="">SQL ({{category[1].size}})</a></li>
                     {% endif %}
                {% endfor %}
             </ul>
