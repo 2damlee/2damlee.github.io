@@ -19,7 +19,7 @@ footer_scripts:
   - /assets/js/custom/dark-theme.js
 # Site Settings
 locale                   : "ko-KR"
-title                    : "✍️Lee Minjeong"
+title                    : "KINGGG"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Lee Minjeong"
@@ -29,7 +29,7 @@ baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "2damlee/2damlee.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : "✍️Lee Minjeong"
+masthead_title           : "KINGGG"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
@@ -99,7 +99,7 @@ analytics:
 author:
   name             : "이민정"
   avatar           : "/assets/images/profile/20.jpeg"
-  bio              : "배움기록✏️"
+  bio              : "메모장"
   location         : #
   email            :
   links:
