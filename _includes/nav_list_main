@@ -79,15 +79,13 @@
                     {% endif %}
                 {% endfor %}
             	</ul>
-
-	<span class="nav__sub-title">Cloud</span>        
-             <ul>
+	<ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Aws" %}
-                        <li><a href="/categories/aws" class=""> AWS ({{category[1].size}})</a></li>
+                    {% if category[0] == "Datastructure" %}
+                        <li><a href="/categories/datastructure" class=""> DATA STRUCTURE ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
-            </ul>
+            	</ul>
 
 	<span class="nav__sub-title">Problem Solving</span>        
             <ul>
