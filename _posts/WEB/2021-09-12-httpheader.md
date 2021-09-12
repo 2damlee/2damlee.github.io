@@ -1,5 +1,5 @@
 ---
-title: "security - HTTP Header"
+title: "HTTP Header"
 categories:
   - Web
 layout: archive
