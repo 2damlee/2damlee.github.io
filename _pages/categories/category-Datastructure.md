@@ -1,7 +1,7 @@
 ---
 title: "DataStructure"
 layout: archive
-permalink: /categories/Datastructure/
+permalink: /categories/datastructure/
 author_profile: true
 sidebar_main: true
 ---
