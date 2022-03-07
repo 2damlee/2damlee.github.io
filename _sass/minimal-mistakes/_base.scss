@@ -1,6 +1,7 @@
 /* ==========================================================================
    BASE ELEMENTS
    ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 html {
   /* sticky footer fix */
@@ -309,6 +310,8 @@ nav {
 
   li {
     list-style: none;
+    font-family: 'VT323', monospace;
+    font-size: $h-size-3;
   }
 
   a {
@@ -355,4 +358,9 @@ input[type="submit"],
 .archive__item-teaser {
   -webkit-transition: $global-transition;
   transition: $global-transition;
+}
+
+.site-title {
+  font-family: 'VT323', monospace;
+  font-size: 40px;
 }
