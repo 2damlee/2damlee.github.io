@@ -4,5 +4,14 @@
 
 @charset "utf-8";
 
+@import "custom/customImport.scss";
+
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+@font-face {
+    font-family: "D2Coding";
+    src: url("../fonts/D2Coding-Ver1.3.2-20180524-all.ttc");
+}
+
+@import "custom/customOverride.scss";

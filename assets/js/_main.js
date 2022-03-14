@@ -53,6 +53,7 @@ $(document).ready(function() {
     }, 400);
   });
 
+
   // Smooth scrolling
   var scroll = new SmoothScroll('a[href*="#"]', {
     offset: 20,
