@@ -21,6 +21,7 @@ if (darkTheme) {
 
     let toggleThemeBtn = document.getElementById("toggle_dark_theme")
     if (toggleThemeBtn) {
+        console.log('toggle click check!')
         toggleThemeBtn.checked = isDarkMode
     }
 
