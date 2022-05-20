@@ -10,13 +10,13 @@ author_profile: true
 
 ## algorithms
 
-- <a href="../_posts/Algorithm/2022-03-18-분할(1).md">Divide and Conquer</a>
+- <a href="../algorithm/분할(1)/">Divide and Conquer</a>
     - Binary Search
     - Median of two sorted arrays
     - Quick Sort
     - Merge Sort
 <br><br>
-- <a href="../_posts/Algorithm/2022-03-21-동적알고리즘(1).md">Dynamcic Programming</a>
+- <a href="../Algorithm/동적알고리즘(1).md">Dynamcic Programming</a>
     - Fibonacci numbers
     - Largest Sum contiguous Subarray
     - Coin Change
@@ -24,7 +24,7 @@ author_profile: true
     - Min Cost Path
     - Bellman - Ford Algorithm for Shortest Paths
  <br><br>
-- <a href="../_posts/Algorithm/2022-03-26-욕심쟁이알고리즘(1).md">Greeday Algorithms</a>
+- <a href="../algorithm/욕심쟁이알고리즘(1)">Greeday Algorithms</a>
     - Activity Selection Problem
     - Kruskal's Minimum Spanning Tree Algorithm
     - Huffman Coding
@@ -37,5 +37,5 @@ author_profile: true
     - Bubble Sort
     - Insertion Sort
     - Merge Sort
-    - <a href="../_posts/Algorithm/2022-05-20-HeapSort.md">Heap Sort</a>
+    - <a href="../Algorithm/HeapSort">Heap Sort</a>
     - Quick Sort
