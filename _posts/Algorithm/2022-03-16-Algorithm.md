@@ -31,3 +31,11 @@ author_profile: true
     - Prim's Minimum Spanning Tree Algorithm
     - Job Sequencing Problem
     - find Minimum number of Coins
+<br><br>
+- Sort Algorithms
+    - Selection Sort
+    - Bubble Sort
+    - Insertion Sort
+    - Merge Sort
+    - <a href="../_posts/Algorithm/2022-05-20-HeapSort.md">Heap Sort</a>
+    - Quick Sort
