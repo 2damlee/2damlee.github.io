@@ -15,8 +15,8 @@
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "ko-KR"
-title                    : "TIL"
+locale                   : "en-US" # "ko-KR"에서 변경
+title                    : #""
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Lee Minjeong"
@@ -25,8 +25,8 @@ url                      : "https://2damlee.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "2damlee/2damlee.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : "TIL"
+logo                     : "/assets/images/home/title_image.png"
+masthead_title           : #"/assets/images/home/title_image.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
@@ -95,7 +95,7 @@ analytics:
 # Site Author
 author:
   name             : "Minjeong Lee"
-  avatar           : "/assets/images/profile/profile_img.png"
+  avatar           : "/assets/images/home/blog_profile.png"
   bio              : "I worked as a Software System Developer, <br>and I am currently studying Data Analysis"
   location         : #
   email            :

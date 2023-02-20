@@ -32,3 +32,7 @@ check!
 disjoint =/= independent
 : disjoint can be dependent but independent cannot be disjoint
 
+`P(A and B)` = `P(A|B)P(B)` = `P(A|B)P(A)`
+
+Bayes' law
+ `P(A|B)P(B)=P(B|A)P(A)` <-> `P(A|B)` = `P(B|A)P(A)/P(B)` = `P(B|A)P(A)/P(B)`
