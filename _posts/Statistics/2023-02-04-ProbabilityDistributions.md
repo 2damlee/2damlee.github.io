@@ -10,6 +10,10 @@ tag:
 ---
 
 #### 용어정리
+- population(모집단)
+- sample(표본)
+- parameter(모수)
+- statistic(통계량)
 - arithmetic mean(산술평균)
 - median(중앙값)
 - mode(최빈값)
