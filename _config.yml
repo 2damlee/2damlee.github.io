@@ -25,7 +25,7 @@ url                      : "https://2damlee.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "2damlee/2damlee.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : "/assets/images/home/title_image.png"
+logo                     : "/assets/images/profile/new_title.png"
 masthead_title           : #"/assets/images/home/title_image.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -95,8 +95,8 @@ analytics:
 # Site Author
 author:
   name             : "Minjeong Lee"
-  avatar           : "/assets/images/home/blog_profile.png"
-  bio              : "I worked as a Software System Developer, <br>and I am currently studying Data Analysis"
+  avatar           : "/assets/images/profile/profile_img.png"
+  bio              : "I have experience working as a Software System Developer, and I am currently pursuing further knowledge and skills through my studies in Data Science."
   location         : #
   email            :
   links:
