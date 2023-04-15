@@ -95,6 +95,13 @@
                 </ul>
                 <ul>
                     {% for category in site.categories %}
+                        {% if category[0] == "RegressionModels" %}
+                            <li><a href="/categories/RegressionModels" class=""> REGRESSION MODELS ({{category[1].size}})</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <ul>
+                    {% for category in site.categories %}
                         {% if category[0] == "Mathemetics" %}
                             <li><a href="/categories/Mathemetics" class=""> BASIC MATHEMETICS ({{category[1].size}})</a></li>
                         {% endif %}
